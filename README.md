@@ -6,6 +6,6 @@ Project Goal: Building off an existing code that searches for global minimum ele
 Code Source: https://github.com/chrisfosterelli/physical-gradient-descent ;
 Data Source: http://dwtkns.com/srtm/ 
 
+![logo](/GerudoValley.tif)
 
-![GitHub Logo](/GerudoValley.tif)
 
