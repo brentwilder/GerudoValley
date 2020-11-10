@@ -7,5 +7,5 @@ Code Source: https://github.com/chrisfosterelli/physical-gradient-descent ;
 Data Source: http://dwtkns.com/srtm/ 
 
 
-![GitHub Logo](\GerudoValley.tif)
+![GitHub Logo](/GerudoValley.tif)
 Format: ![Alt Text](url)
