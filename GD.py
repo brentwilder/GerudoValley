@@ -1,9 +1,7 @@
 import sys
 import csv
 import rasterio
-import argparse
 import numpy as np
-import plotly.express as px
 import math
 
 # Goal: optimize alpha using Adaptive Moment Estimation (Adam)
@@ -14,7 +12,7 @@ import math
 # Difficult point = 36.2691711, -117.0563655
 
 # Dead Sea
-# min elev = -415 meters
+# min elev = -428 meters
 # very difficult point = 36.1588269°E 31.3953303°N 2,947.278 ft
 # Difficult point = 35.1970443°E 31.5575025°N 2,652.192 ft
 
@@ -66,13 +64,13 @@ def gradient_descent(theta, alpha, gamma, num_iters):
             return theta, J_history
 
         # Update variables
-        theta[0][0] = theta[0][0] - lat_slope
-        theta[1][0] = theta[1][0] - lon_slope
+        theta[0][0] = theta[0][0] - alpha*lat_slope
+        theta[1][0] = theta[1][0] - alpha*lon_slope
 
     return theta, J_history
 
 theta = np.array([ [lat], [lon] ])
-theta, J_history = gradient_descent(theta,0.01,0.99,2000)
+theta, J_history = gradient_descent(theta,0.01,0.9,10000)
 
 with open(output, 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
